@@ -1,9 +1,212 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
+
 html {
     font-size: 16px;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: 'Apercu', Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+body {
+    max-width: 88%;
+    margin: auto;
+    background: #333;
+    color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+code {
+    color: darkorange;
+}
+
+
+/*Demo Specific Styles*/
+
+.demo {
+    border: 2px dashed #999;
+    padding: 1rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 10px 0 black;
+}
+
+:target {
+    margin-top: 300px;
+    margin-bottom: 300px;
+    transition: 0.6s;
+    box-shadow: 0 0 20px 0 darkorange;
+}
+
+.demo-subsection {
+    padding: 1rem;
+    border: 1px solid gold;
+}
+
+
+/*Specific demo specific styles*/
+
+
+/*Function: element()*/
+
+#function-element .box {
+    height: 200px;
+    width: 200px;
+    background-image: -moz-element(#background-button);
+    background-image: element(#background-button);
+    background-repeat: repeat-y;
+}
+
+#background-button {
+    background: linear-gradient(to bottom right, blue, purple);
+    border-radius: 60px;
+    padding: 1rem;
+    color: #fff;
+    font-size: 24px;
+    border: 2px dotted;
+}
+
+
+/*Function: calc()*/
+
+
+/*Demo 1*/
+
+#calc-grid .row {
+    height: 200px;
+}
+
+#calc-grid .column {
+    background: aqua;
+    width: calc(100%/12 - 20px);
+    /* (100% / number of columns)*spanningNumber - gutter*/
+    height: 100%;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#calc-grid .column.col-2 {
+    width: calc(100%/6 - 20px);
+}
+
+
+/*Demo 2*/
+
+.fixed-margin-box {
+    background: aqua;
+    width: calc( 100% - 80px);
+    margin: auto;
+    height: 100px;
+}
+
+
+/*Demo 3*/
+
+.fixed-header-container {
+    width: 400px;
+    margin: auto;
+    background: aqua;
+    height: 500px;
+}
+
+.fixed-header-container header {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: linear-gradient(to bottom right, blue, purple);
+}
+
+.fixed-header-container .content {
+    /*max-height: 200px;*/
+    overflow-y: auto;
+    background: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0, 0, 0, 0.2) 35px, rgba(0, 0, 0, 0.2) 70px);
+    padding: 1rem;
+    text-align: justify;
+    color: #000;
+    height: calc(100% - 50px);
+    /*height: 450px;*/
+}
+
+@media screen and (max-width: 500px) {
+    .fixed-header-container {
+        height: 400px;
+    }
+}
+
+
+/*Demo 4*/
+
+.right-bottom {
+    background-image: url(../images/shocked-cat.png), url(../images/green-landscape.jpg);
+    height: 400px;
+    width: 600px;
+    background-repeat: no-repeat;
+    background-size: 200px auto, cover;
+    margin: auto;
+    background-position: calc(100% - 10px) calc(100% - 10px), 0 0;
+}
+
+
+/*Demo 5*/
+
+.rainbow-gradient {
+    background: linear-gradient(to right, hsl(calc(0*60), 100%, 50%), hsl(calc(1*60), 100%, 50%), hsl(calc(2*60), 100%, 50%), hsl(calc(3*60), 100%, 50%), hsl(calc(4*60), 100%, 50%), hsl(calc(5*60), 100%, 50%), hsl(calc(6*60), 100%, 50%));
+    margin: auto;
+    height: 200px;
+    width: 80%;
+}
+
+
+/*Demo 6*/
+
+.diagonal-gradient {
+    background-color: #0065BD;
+    background-image: linear-gradient(to right bottom, transparent, transparent calc(50% - 1.5rem), white 0, white calc(50% + 1.5rem), transparent 0), linear-gradient(to left bottom, transparent, transparent calc(50% - 1.5rem), white 0, white calc(50% + 1.5rem), transparent 0), linear-gradient(to right, transparent, transparent calc(50% - 1.5rem), white 0, white calc(50% + 1.5rem), transparent 0), linear-gradient(to bottom, transparent, transparent calc(50% - 1.5rem), white 0, white calc(50% + 1.5rem), transparent 0);
+    margin: auto;
+    height: 300px;
+    max-width: 400px;
+}
+
+
+/*Demo 7*/
+
+.columns-container {
+    width: 80%;
+    background: aqua;
+    margin: auto;
+    color: black;
+}
+
+.columns-container .sidebar,
+.columns-container .main {
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0, 0, 0, 0.2) 35px, rgba(0, 0, 0, 0.2) 70px);
+    height: 400px;
+    padding: 1rem;
+}
+
+.columns-container .sidebar {
+    float: left;
+    width: 200px;
+}
+
+.columns-container .main {
+    float: right;
+    width: calc(100% - 200px - 2rem);
+    /*100% - sidebarWidth - spacing between main and sidebar*/
+    /*margin-left: calc( 200px + 2rem);*/
+    overflow-y: auto;
+}
+
+.columns-container::after {
+    content: '';
+    display: block;
+    clear: both;
 }

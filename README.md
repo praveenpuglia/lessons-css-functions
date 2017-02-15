@@ -1,7 +1,4 @@
-# Demoplate
-
-A pico setup for simple demos for which you don't need to go to an online service.
-Currently it supports only HTML, CSS & JS.
+# Lessons: CSS: Functions - Powered by [Demoplate](https://github.com/praveenpuglia/demoplate)
 
 ## Installation
 ```
