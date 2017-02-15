@@ -145,7 +145,7 @@ code {
 /*Demo 4*/
 
 .right-bottom {
-    background-image: url(../images/shocked-cat.png), url(../images/green-landscape.jpg);
+    background-image: url(images/shocked-cat.png), url(images/green-landscape.jpg);
     height: 400px;
     width: 600px;
     background-repeat: no-repeat;
